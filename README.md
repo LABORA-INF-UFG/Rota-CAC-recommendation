@@ -14,10 +14,9 @@ oferece melhor compromisso entre a pontuação e a QoE percebida frente a estrat
 
 # 🎯 Contribuições
 
-- **Modelo de Recomendação Rota-CAC:** Propõe um modelo que integra QoE, atenção ao contexto dos POIs e custo de deslocamento para recomendação de rotas em JBLRA.
+- **Modelo de Recomendação Rota-CAC:** Propõe um modelo que integra QoE-CAC, contexto dos POIs e custo de deslocamento para recomendação de rotas em JBLRA.
 - **Geração do Grafo de POIs:** Extrai pontos de interesse reais via Overpass API e constrói um grafo georreferenciado com custo de deslocamento baseado em tempo de caminhada.
-- **Heurística Gulosa (Greedy):** Implementa uma estratégia de seleção gulosa como baseline para comparação.
-- **Algoritmo ACO (Ant Colony Optimization):** Implementa o ACO com parâmetro eta (η) variável para explorar diferentes estratégias de balanceamento entre QoE e custo.
+- **Recomendação de rotas:** Implementa estratégia Greedy e estratégia Rota-CAC com base no ACO, variando o parâmetro eta (η) para explorar diferentes estratégias de balanceamento entre QoE e custo.
 - **Análise Comparativa:** Avalia os algoritmos em dois cenários (com e sem penalidade de atraso) ao longo de 30 execuções, com intervalos de confiança de 95%.
 - **Disponibilização do Código e Dataset:** Código-fonte e dataset disponibilizados para reprodução dos experimentos.
 
