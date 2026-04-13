@@ -11,26 +11,14 @@ Experimentos com dados reais de rede demonstram que a abordagem equilibrada (Rot
 oferece melhor compromisso entre a pontuação e a QoE percebida frente a estratégias não conscientes de QoE.
 
 ---
-
-# 🎯 Contribuições
-
-- **Modelo de Recomendação Rota-CAC:** Propõe um modelo que integra QoE-CAC, contexto dos POIs e custo de deslocamento para recomendação de rotas em JBLRA.
-- **Geração do Grafo de POIs:** Constrói um grafo georreferenciado de uma cidade, extraindo pontos de interesse reais via Overpass API com custo de deslocamento baseado em tempo de caminhada.
-- **Recomendação de rotas:** A recomendação de rotas é implementada utilizando a estratégia Greedy (baseline) e as estratégias RotaCAC com base no ACO, variando o parâmetro eta (η):RotaCAC-1 (foco na QoE), RotaCAC-0 (foco na pontuação) e RotaCAC-0.5 (foco equilibrado entre QoE e pontuação).
-- **Análises:** Os experimentos fornecem três análises distintas: análise de eficiência de QoE e pontuação, análise de totais de pontuação, QoE e tamanho da rota; e análise comparativa de cenários com/sem penalidades de atraso ao longo de 30 execuções, com intervalos de confiança de 95%.
-- **Disponibilização do Código e Dataset:** Código-fonte e dataset disponibilizados para reprodução dos experimentos.
-
----
-
-# Estrutura do Repositório
-
+# Estrutura 
 ```
 Rota-CAC-recommendation/
 ├── dataset/               # Dados utilizados nos experimentos
 ├── geracao_grafo/         # Código MATLAB para extração de POIs e geração do grafo
 └── recomendacao_rotas/    # Código MATLAB para recomendação de rotas (Greedy e RotaCAC-η)
 ```
-
+O repositório está organizado em três seções que correspondem: 
 - **dataset:** Contém os arquivos CSV com POIs, pokémons normalizados, custos de deslocamento, valores de QoE e descrição geral.
 - **geracao_grafo:** Responsável pela consulta à Overpass API, geração do grafo de POIs e cálculo das distâncias e tempos de deslocamento.
 - **recomendacao_rotas:** Implementa os algoritmos de recomendação (Greedy e  RotaCAC-η), recomendando as rotas e realizando os experimentos e análises.
@@ -47,6 +35,9 @@ Rota-CAC-recommendation/
 Com base nos códigos e datasets disponibilizados neste repositório.
 
 ---
+
+# Informações básicas
+
 
 # Dependências
 
@@ -156,6 +147,16 @@ Executa 30 rodadas independentes (com `rng(i)` para reprodutibilidade) comparand
 | η testados | 0, 0.5, 1 |
 
 ---
+
+
+# 🎯 Contribuições
+
+- **Modelo de Recomendação Rota-CAC:** Propõe um modelo que integra QoE-CAC, contexto dos POIs e custo de deslocamento para recomendação de rotas em JBLRA.
+- **Geração do Grafo de POIs:** Constrói um grafo georreferenciado de uma cidade, extraindo pontos de interesse reais via Overpass API com custo de deslocamento baseado em tempo de caminhada.
+- **Recomendação de rotas:** A recomendação de rotas é implementada utilizando a estratégia Greedy (baseline) e as estratégias RotaCAC com base no ACO, variando o parâmetro eta (η):RotaCAC-1 (foco na QoE), RotaCAC-0 (foco na pontuação) e RotaCAC-0.5 (foco equilibrado entre QoE e pontuação).
+- **Análises:** Os experimentos fornecem três análises distintas: análise de eficiência de QoE e pontuação, análise de totais de pontuação, QoE e tamanho da rota; e análise comparativa de cenários com/sem penalidades de atraso ao longo de 30 execuções, com intervalos de confiança de 95%.
+- **Disponibilização do Código e Dataset:** Código-fonte e dataset disponibilizados para reprodução dos experimentos.
+
 
 # Autores
 
