@@ -23,7 +23,8 @@ O repositório está organizado em três seções que correspondem:
 - **geracao_grafo:** Responsável pela consulta à Overpass API, geração do grafo de POIs e cálculo das distâncias e tempos de deslocamento.
 - **recomendacao_rotas:** Implementa os algoritmos de recomendação (Greedy e  RotaCAC-η), recomendando as rotas e realizando os experimentos e análises.
 
-Para uma explicação detalhada sobre a execução do código, consulte o arquivo [tutorial.pdf](./tutorial.pdf).
+Para uma explicação detalhada sobre execução do código, consulte o arquivo [tutorial.pdf] (./tutorial.pdf)
+
 ---
 
 # Selos Considerados
