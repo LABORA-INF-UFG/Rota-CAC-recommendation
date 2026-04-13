@@ -37,15 +37,17 @@ Com base nos códigos e datasets disponibilizados neste repositório.
 ---
 
 # Informações básicas
+Para execução do código, necessita-se dos seguintes pre-requisitos:
+
+- **Sistema Operacional:** Windows, macOS ou Linux
+- **Software:** MATLAB R2022b ou superior
+- **Hardware mínimo:** 4GB RAM, 500MB de espaço em disco
 
 
 # Dependências
-
-## Requisitos
-
-- MATLAB R2022b ou superior
+- Necessária conexão com a internet (para consulta à Overpass API na geração do grafo)
 - Nenhuma Toolbox adicional é necessária
-- Conexão com a internet (para consulta à Overpass API na geração do grafo)
+
 
 ---
 
