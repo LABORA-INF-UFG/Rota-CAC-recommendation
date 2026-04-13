@@ -16,8 +16,8 @@ oferece melhor compromisso entre a pontuação e a QoE percebida frente a estrat
 
 - **Modelo de Recomendação Rota-CAC:** Propõe um modelo que integra QoE-CAC, contexto dos POIs e custo de deslocamento para recomendação de rotas em JBLRA.
 - **Geração do Grafo de POIs:** Extrai pontos de interesse reais via Overpass API e constrói um grafo georreferenciado com custo de deslocamento baseado em tempo de caminhada.
-- **Recomendação de rotas:** Implementa estratégia Greedy e estratégia Rota-CAC com base no ACO, variando o parâmetro eta (η) para explorar diferentes estratégias de balanceamento entre QoE e custo.
-- **Análise Comparativa:** Avalia os algoritmos em dois cenários (com e sem penalidade de atraso) ao longo de 30 execuções, com intervalos de confiança de 95%.
+- **Recomendação de rotas:** A recomendação de rotas é implementada utilizando a estratégia Greedy (baseline) e as estratégias RotaCAC com base no ACO, variando o parâmetro eta (η):RotaCAC-1 (foco na QoE), RotaCAC-0 (foco na pontuação) e RotaCAC-0.5 (foco equilibrado entre QoE e pontuação).
+- **Análises:** Os experimentos fornecem três análises distintas: análise de eficiência de QoE e pontuação, análise de totais de pontuação, QoE e tamanho da rota; e análise comparativa de cenários com/sem penalidades de atraso ao longo de 30 execuções, com intervalos de confiança de 95%.
 - **Disponibilização do Código e Dataset:** Código-fonte e dataset disponibilizados para reprodução dos experimentos.
 
 ---
