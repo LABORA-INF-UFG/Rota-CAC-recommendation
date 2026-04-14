@@ -184,17 +184,6 @@ https://creativecommons.org/licenses/by/4.0/deed.pt-br
 
 Este projeto está licenciado sob a licença **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
 
-[![Licença Creative Commons](https://creativecommons.org)](http://creativecommons.org)
+[![Licença Creative Commons](https://creativecommons.org)](https://creativecommons.org)
 
-# LICENSE
-
-[![CC BY 4.0][cc-by-shield]][cc-by]
-
-Este projeto está licenciado sob a [Creative Commons Attribution 4.0 International][cc-by].
-
-[![CC BY 4.0][cc-by-image]][cc-by]
-
-[cc-by]: http://creativecommons.org
-[cc-by-image]: https://creativecommons.org
-[cc-by-shield]: https://shields.io
 
