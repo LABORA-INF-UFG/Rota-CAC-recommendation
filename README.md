@@ -177,7 +177,7 @@ Instituto de Informática — Universidade Federal de Goiás (UFG)
 
 # LICENSE
 
-Este projeto está licenciado sob a licença [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org).
+Este projeto está licenciado sob a licença [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.pt-br).
 
 
 
