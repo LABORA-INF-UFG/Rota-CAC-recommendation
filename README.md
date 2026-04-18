@@ -121,7 +121,7 @@ Entre na pasta `geracao_grafo/` e execute o script principal no MATLAB:
 
 ```matlab
 cd geracao_grafo
-main
+main.m
 ```
 Este script consulta a Overpass API e gera os seguintes arquivos CSV:
 - `grafo_pois_gyn.csv`  e   `grafo_pois_poke_qoe.csv` 
@@ -133,17 +133,33 @@ Entre na pasta `recomendacao_rotas/` e execute a análise comparativa:
 
 ```matlab
 cd recomendacao_rotas
-analise_comparativa_sbrc
+main_todos.m
 ```
-Este script executa 30 simulações para dois cenários:
-- **Cenário 1:** Sem penalidade de atraso (`atraso = 0`)
-- **Cenário 2:** Com penalidade de atraso (`atraso = 60s`)
+O script executará uma avaliação geral para os métodos Greedy e Rota-CAC
+e exibirá um resumo comparativo de rotas semelhante ao abaixo:
+==================================================================
+           RESUMO COMPARATIVO DE ROTAS
+==================================================================
+Algoritmo                 || Tamanho Rota    || Pontos     || QoE       
+------------------------------------------------------------------
+Greedy (Baseline)         || 7               || 3.61       || 2.47      
+ACO Equilibrado           || 15              || 6.87       || 5.45      
+ACO Foco Pontos           || 14              || 6.60       || 5.15      
+ACO Foco QoE              || 14              || 5.39       || 5.78
 
-E compara quatro estratégias:
-- Greedy
-- RotaCAC-0.5 (η = 0.5)
-- RotaCAC-1 (η = 1)
-- RotaCAC-0 (η = 0)
+Prossiga para os experimentos, respondendo ao prompt no MatLab:
+======================================================
+       EXPERIMENTOS
+======================================================
+Deseja executar os experimentos? (s/n):
+
+Para execução dos experimentos definitivos, escolha 30 execuções. 
+O arquivo main_todos invoca os seguintes módulos: avalia_eficiencia; analise_totais_absolutos e
+analise_comparativa. Ao final, são exibidos os gráficos: 
+Gráfico Análise de Eficiência,
+Grafíco com Pontuação total, QCAC total e número médio de POIs,
+Gráfico de Impacto da Penalidade.
+
 
 ## Reivindicação #1: Recomendação de Rotas
 Esta etapa já considera todos os parâmetros e arquivos .csv necessários para execução 
