@@ -14,14 +14,14 @@ oferece melhor compromisso entre a pontuação e a QoE percebida frente a estrat
 # Estrutura 
 ```
 Rota-CAC-recommendation/
-├── dataset/               # Dados utilizados nos experimentos
+├── dataset/               # Dados utilizados nos experimentos. Arquivo descricao_geral.txt detalha o conteúdo de cada arquivo .csv
 ├── geracao_grafo/         # Código MATLAB para extração de POIs e geração do grafo
 └── recomendacao_rotas/    # Código MATLAB para recomendação de rotas (Greedy e RotaCAC-η)
 ```
 O repositório está organizado em três seções que correspondem: 
 - **dataset:** Contém os arquivos CSV com POIs, pokémons normalizados, custos de deslocamento, valores de QoE e descrição geral.
 - **geracao_grafo:** Responsável pela consulta à Overpass API, geração do grafo de POIs e cálculo das distâncias e tempos de deslocamento.
-- **recomendacao_rotas:** Implementa os algoritmos de recomendação (Greedy e  RotaCAC-η), recomendando as rotas e realizando os experimentos e análises.
+- **recomendacao_rotas:** Este é o principal diretório. Implementa os algoritmos de recomendação (Greedy e  RotaCAC-η), recomendando as rotas e realizando os experimentos e análises.
 
 
 ---
