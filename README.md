@@ -134,7 +134,7 @@ Entre na pasta `recomendacao_rotas/` e execute a análise comparativa:
 ```matlab
 cd recomendacao_rotas
 main_todos.m
-```
+
 O script executará uma avaliação geral para os métodos Greedy e Rota-CAC
 e exibirá um resumo comparativo de rotas semelhante ao abaixo:
 ==================================================================
@@ -159,6 +159,7 @@ analise_comparativa. Ao final, são exibidos os gráficos:
 Gráfico Análise de Eficiência,
 Grafíco com Pontuação total, QCAC total e número médio de POIs,
 Gráfico de Impacto da Penalidade.
+```
 
 
 ## Reivindicação #1: Recomendação de Rotas
