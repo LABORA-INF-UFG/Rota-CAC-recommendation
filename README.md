@@ -111,8 +111,9 @@ Gráfico de Impacto da Penalidade.
 
 # Experimentos
 
-O experimento principal encontra-se na pasta `recomendacao_rotas`.
-No entanto, o trabalho efetuou um pre-processamento para geração dos grafos e geração dos datasets utilizados na etapa de recomendação de rotas.
+O experimento principal é o de Recomendação de Rotas (Etapa 2).
+A Etapa 1 corresponde ao pre-processamento e já foi previamente executada para execução da Etapa 2.
+Ela contém o código de pre-processamento para geração dos grafos e geração dos datasets utilizados. 
 Cada etapa é descrita logo a seguir.
 
 ## Etapa 1: Pre-processamento: Geração do Grafo de POIs
