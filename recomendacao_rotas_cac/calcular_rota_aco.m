@@ -1,3 +1,4 @@
+
 function [melhor_rota, melhor_pontuacao_abs, melhor_qoe_abs, melhor_tempo] = calcular_rota_aco(userid, tempo_max, pois, pokemons, custos, qoe, poiid_inicio, eta, num_formigas, num_iter, alfa, beta, rho, limiar, atraso_max)
     num_pois = height(pois);
     poipokemon = containers.Map(pokemons.pkid, pokemons.valor);
@@ -13,7 +14,8 @@ function [melhor_rota, melhor_pontuacao_abs, melhor_qoe_abs, melhor_tempo] = cal
         if q_v < limiar, t_v_p = t_v_p + (1 - q_v) * atraso_max; end
         t_tot = custos.tdeslocamento(i) + t_v_p;
         p_pk = 0; if isKey(poipokemon, pois.pkid(para)), p_pk = poipokemon(pois.pkid(para)); end
-        relevancia = (eta * p_pk) + ((1 - eta) * q_v);
+        %relevancia = (eta * p_pk) + ((1 - eta) * q_v);
+        relevancia = ((1-eta) * p_pk) + ((eta) * q_v);
         eta_matrix(de, para) = relevancia / (t_tot + 0.001);
         td_matrix(de, para) = custos.tdeslocamento(i);
     end
@@ -25,7 +27,8 @@ function [melhor_rota, melhor_pontuacao_abs, melhor_qoe_abs, melhor_tempo] = cal
         rotas_it = cell(num_formigas, 1); scores_it = zeros(num_formigas, 1);
         for k = 1:num_formigas
             [r, p, q, t] = construir_rota_formiga(poiid_inicio, tempo_max, num_pois, pois, poipokemon, qoe_map, td_matrix, tau, eta_matrix, alfa, beta, limiar, atraso_max);
-            score_p = (eta * p) + ((1 - eta) * q);
+           % score_p = ((eta) * p) + ((1-eta) * q);
+            score_p = ((1-eta) * p) + ((eta) * q);
             if score_p > melhor_score_glob
                 melhor_score_glob = score_p; melhor_rota = r;
                 melhor_pontuacao_abs = p; melhor_qoe_abs = q; melhor_tempo = t;

@@ -1,26 +1,27 @@
 % avalia_eficiencia.m
 % Objetivo: Rodar 30 simulações e calcular a eficiência da QoE (Valor/Tempo)
 
-% OBS: Este script assume que você rodou o script main_pokemon.m ANTES, 
+% OBS: Este script assume que você rodou o script main_todos.m ANTES, 
 % e que as variáveis globais (userid, budget_tempo, pois, etc.) 
 % estão disponíveis no Workspace do MATLAB.
 
-if ~exist('userid', 'var')
-    error('Por favor, rode o script main_pokemon.m primeiro para carregar os parametros.');
+if ~exist('userid', 'var') || ~exist('num_execucoes', 'var')
+    error('Por favor, rode o script main_todos.m primeiro para carregar os parametros.');
 end
 
-num_execucoes = 30;
+%num_execucoes = 30;  %% se quiser explicitar o numero de conexoes
 
 % Matrizes para armazenar os resultados de cada rodada
 res_pontos = zeros(num_execucoes, 4); % [Greedy, ACO_05, ACO_0, ACO_1]
 res_qoe    = zeros(num_execucoes, 4);
 res_tempo  = zeros(num_execucoes, 4);
-fprintf('-----Análise de eficiência...\n');
-fprintf('Iniciando 30 execuções para análise de eficiência...\n');
+fprintf('-----Análise de eficiência da QoE...\n');
+fprintf('Iniciando %d execuções para análise de eficiência da QoE e de Pontos...\n', num_execucoes);
 
 for i = 1:num_execucoes
-    fprintf('Rodada %d/30...\n', i);
-    
+    %fprintf('Rodada %d/30...\n', i);
+    fprintf('Rodada %d/%d...\n', i, num_execucoes);
+
     % 1. Rodar Greedy (AGORA PASSANDO limiar e atraso_maximo)
     [~, p_g, q_g, t_g] = calcular_rota_greedy(userid, budget_tempo, pois, pokemons, custos, qoe, poiid_inicio, limiar, atraso_maximo);
     
@@ -34,13 +35,18 @@ for i = 1:num_execucoes
     [~, p_aco1, q_aco1, t_aco1] = calcular_rota_aco(userid, budget_tempo, pois, pokemons, custos, qoe, poiid_inicio, 1, num_formigas, num_iter, alfa, beta, rho, limiar, atraso_maximo);
     
     % Armazenar resultados
-    res_pontos(i, :) = [p_g, p_aco05, p_aco0, p_aco1];
-    res_qoe(i, :)    = [q_g, q_aco05, q_aco0, q_aco1];
-    res_tempo(i, :)  = [t_g, t_aco05, t_aco0, t_aco1];
+%     res_pontos(i, :) = [p_g, p_aco05, p_aco0, p_aco1];
+%     res_qoe(i, :)    = [q_g, q_aco05, q_aco0, q_aco1];
+%     res_tempo(i, :)  = [t_g, t_aco05, t_aco0, t_aco1];
+
+    res_pontos(i, :) = [p_g, p_aco05, p_aco1, p_aco0];
+    res_qoe(i, :)    = [q_g, q_aco05, q_aco1, q_aco0];
+    res_tempo(i, :)  = [t_g, t_aco05, t_aco1, t_aco0];
 end
 
 % --- CÁLCULO DA EFICIÊNCIA (Média das 30 rodadas) ---
 efic_qoe = mean(res_qoe ./ res_tempo);
+
 efic_pontos = mean(res_pontos ./ res_tempo);
 
 % --- GERAÇÃO DO GRÁFICO (NOMES E CORES CUSTOMIZADOS) ---
@@ -49,7 +55,7 @@ efic_pontos = mean(res_pontos ./ res_tempo);
 metodos = {'Greedy', 'RotaCAC-0.5', 'RotaCAC-1', 'RotaCAC-0'};
 
 
-figure('Name', 'Análise de Eficiência (Média 30 Execuções)', 'Color', 'w');
+figure('Name', 'Análise de Eficiência de QoE e de Pontos)', 'Color', 'w');
 
 % Definição das cores em RGB [R G B]
 % [Azul, Vermelho, Cinza, Laranja] -> Mapeado para as 4 barras

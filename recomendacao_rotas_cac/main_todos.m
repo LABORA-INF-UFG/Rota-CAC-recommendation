@@ -3,7 +3,7 @@
 clc; clear;
 
 % --- Leitura dos dados ---
-usuarios = readtable('usuarios_cdf.csv');
+usuarios = readtable('usuarios.csv');
 pois = readtable('poi.csv');
 pokemons = readtable('pokemon_normalizado.csv');
 custos = readtable('custo.csv');
@@ -25,7 +25,7 @@ rho = 0.1;
 
 % Exibição dos Parâmetros de Entrada (Conforme solicitado)
 fprintf('======================================================\n');
-fprintf('       CONFIGURAÇÕES DO SISTEMA: RecRota_QoeCAC\n');
+fprintf('       CONFIGURAÇÕES DO SISTEMA: RotaCAC\n');
 fprintf('======================================================\n');
 fprintf('User ID: %d | Budget: %.2f s | POI Inicial: %d\n', userid, budget_tempo, poiid_inicio);
 fprintf('Limiar QoE: %.2f | Penalidade: %d s\n', limiar, atraso_maximo);
@@ -47,7 +47,7 @@ disp("Tempo Total Rota: " + tempo_total_g + "s | Execução: " + tempo_execucao_
 
 % --- Execução ACO Variantes ---
 etas = [0.5, 0, 1];
-titulos = ["ACO Equilibrado", "ACO Foco QoE", "ACO Foco Desempenho"];
+titulos = ["ACO Equilibrado", "ACO Foco Pontos", "ACO Foco QoE"];
 res_tamanhos = zeros(1, length(etas));
 res_pontos = zeros(1, length(etas));
 res_qoe = zeros(1, length(etas));
@@ -70,23 +70,35 @@ for i = 1:length(etas)
 end
 
 % --- ANÁLISE COMPARATIVA FINAL ---
-fprintf('\n\n======================================================\n');
+fprintf('\n\n==================================================================\n');
 fprintf('           RESUMO COMPARATIVO DE ROTAS\n');
-fprintf('======================================================\n');
-fprintf('%-25s || %-15s || %-10s\n', 'Algoritmo', 'Tamanho Rota', 'Pontos');
-fprintf('------------------------------------------------------\n');
-fprintf('%-25s || %-15d || %-10.2f\n', 'Greedy (Baseline)', length(rota_g), total_pontos_g);
-
+fprintf('==================================================================\n');
+fprintf('%-25s || %-15s || %-10s || %-10s\n', 'Algoritmo', 'Tamanho Rota', 'Pontos', 'QoE');
+fprintf('------------------------------------------------------------------\n');
+fprintf('%-25s || %-15d || %-10.2f || %-10.2f\n', 'Greedy (Baseline)', length(rota_g), total_pontos_g, total_qoe_g);
 for i = 1:length(etas)
-    fprintf('%-25s || %-15d || %-10.2f\n', titulos(i), res_tamanhos(i), res_pontos(i));
+    fprintf('%-25s || %-15d || %-10.2f || %-10.2f\n', titulos(i), res_tamanhos(i), res_pontos(i), res_qoe(i));
 end
-fprintf('======================================================\n\n\n');
+fprintf('==================================================================\n\n\n');
+
 
 fprintf('======================================================\n');
 fprintf('       EXPERIMENTOS\n');
 fprintf('======================================================\n');
-avalia_eficiencia;
-analise_totais_absolutos;
-analise_comparativa;
+
+resposta = input('Deseja executar os experimentos? (s/n): ', 's');
+fprintf('Obs: Ideal, pelo menos 30 execuções \n');
+
+
+if strcmpi(resposta, 's')
+
+    num_execucoes = input('Número de execuções:');
+       
+    avalia_eficiencia;
+    analise_totais_absolutos;
+    analise_comparativa;
+else
+    fprintf('Experimentos ignorados.\n');
+end
 
 
