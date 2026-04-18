@@ -14,16 +14,15 @@ oferece melhor compromisso entre a pontuação e a QoE percebida frente a estrat
 # Estrutura 
 ```
 Rota-CAC-recommendation/
-├── dataset/               # Dados utilizados nos experimentos
+├── dataset/               # Dados utilizados nos experimentos. Arquivo descricao_geral.txt detalha o conteúdo de cada arquivo .csv
 ├── geracao_grafo/         # Código MATLAB para extração de POIs e geração do grafo
 └── recomendacao_rotas/    # Código MATLAB para recomendação de rotas (Greedy e RotaCAC-η)
 ```
 O repositório está organizado em três seções que correspondem: 
 - **dataset:** Contém os arquivos CSV com POIs, pokémons normalizados, custos de deslocamento, valores de QoE e descrição geral.
 - **geracao_grafo:** Responsável pela consulta à Overpass API, geração do grafo de POIs e cálculo das distâncias e tempos de deslocamento.
-- **recomendacao_rotas:** Implementa os algoritmos de recomendação (Greedy e  RotaCAC-η), recomendando as rotas e realizando os experimentos e análises.
+- **recomendacao_rotas:** Este é o principal diretório. Implementa os algoritmos de recomendação (Greedy e  RotaCAC-η), recomendando as rotas e realizando os experimentos e análises.
 
-Para uma explicação detalhada sobre execução do código, consulte o arquivo [tutorial.pdf] (./tutorial.pdf)
 
 ---
 
@@ -68,23 +67,64 @@ git clone https://github.com/LABORA-INF-UFG/Rota-CAC-recommendation.git
 cd Rota-CAC-recommendation
 ```
 
+# Teste Mínimo
+
+Para validar a instalação:
+entre na pasta `recomendacao_rotas_cac/` e execute o script principal no MATLAB: main_todos.m
+
+```matlab
+cd recomendacao_rotas_cac
+main_todos.m
+
+O script executará uma avaliação geral para os métodos Greedy e Rota-CAC
+e exibirá um resumo comparativo de rotas semelhante ao abaixo:
+==================================================================
+           RESUMO COMPARATIVO DE ROTAS
+==================================================================
+Algoritmo                 || Tamanho Rota    || Pontos     || QoE       
+------------------------------------------------------------------
+Greedy (Baseline)         || 7               || 3.61       || 2.47      
+ACO Equilibrado           || 15              || 6.87       || 5.45      
+ACO Foco Pontos           || 14              || 6.60       || 5.15      
+ACO Foco QoE              || 14              || 5.39       || 5.78
+
+Se quiser avançar para os experimentos, 
+responda ao prompt no MatLab:
+======================================================
+       EXPERIMENTOS
+======================================================
+Deseja executar os experimentos? (s/n):
+
+Para execução mínima, escolha pelo menos 2 execuções 
+O arquivo main_todos invoca os seguintes módulos:
+avalia_eficiencia;
+analise_totais_absolutos;
+analise_comparativa;
+ Em cada um destes módulos, são feitas 30 execuções 
+
+Ao final, espera-se que o script execute sem erros e gere os seguintes gráficos: 
+Gráfico Análise de Eficiência,
+Grafíco com Pontuação total, QCAC total e número médio de POIs,
+Gráfico de Impacto da Penalidade.
+```
 ---
 
-# Execução
+# Experimentos
 
-## Etapa 1: Geração do Grafo de POIs
+O experimento principal é o de Recomendação de Rotas (Etapa 2).
+A Etapa 1 corresponde ao pre-processamento e já foi previamente executada para execução da Etapa 2.
+Ela contém o código de pre-processamento para geração dos grafos e geração dos datasets utilizados. 
+Cada etapa é descrita logo a seguir.
 
+## Etapa 1: Pre-processamento: Geração do Grafo de POIs
 Entre na pasta `geracao_grafo/` e execute o script principal no MATLAB:
 
 ```matlab
 cd geracao_grafo
 main
 ```
-
 Este script consulta a Overpass API e gera os seguintes arquivos CSV:
-- `pois_universitario_gyn.csv` — POIs extraídos
-- `custo_novo.csv` — Custos de deslocamento entre POIs (em segundos e minutos)
-
+- `grafo_pois_gyn.csv`  e   `grafo_pois_poke_qoe.csv` 
 > **Atenção:** A consulta à Overpass API pode demorar alguns segundos. Em caso de erro 504 (Gateway Timeout), o script realiza até 3 tentativas automáticas.
 
 ## Etapa 2: Recomendação de Rotas
@@ -95,7 +135,6 @@ Entre na pasta `recomendacao_rotas/` e execute a análise comparativa:
 cd recomendacao_rotas
 analise_comparativa_sbrc
 ```
-
 Este script executa 30 simulações para dois cenários:
 - **Cenário 1:** Sem penalidade de atraso (`atraso = 0`)
 - **Cenário 2:** Com penalidade de atraso (`atraso = 60s`)
@@ -106,49 +145,17 @@ E compara quatro estratégias:
 - RotaCAC-1 (η = 1)
 - RotaCAC-0 (η = 0)
 
----
+## Reivindicação #1: Recomendação de Rotas
+Esta etapa já considera todos os parâmetros e arquivos .csv necessários para execução 
+Não é necessário efetuar a carga de pre-processamento para sua execução!
 
-# Teste Mínimo
-
-Para validar a instalação, execute teste.m que fará a avaliação da melhor rota para um usuário.
-
-Se quiser avançar para os experimentos, execute o arquivo main_todos. 
-O arquivo main_todos invoca os seguintes módulos:
-avalia_eficiencia;
-analise_totais_absolutos;
-analise_comparativa;
- Em cada um destes módulos, são feitas 30 execuções 
- 
- altere no código, o parâmetro 
-
-```matlab
-num_execucoes = 2;
-```
-
-Espera-se que o script execute sem erros e gere os seguintes gráficos 
-Gráfico Análise de Eficiência, Grafíco com Pontuação total, QCAC total e número médio de POIs, Gráfico de Impacto da Penalidade
----
-
-# Experimentos
-
-## Reivindicação #1: Geração do Grafo
-
-Executa a extração de POIs reais e gera o grafo com custos de deslocamento baseados em velocidade de caminhada (5 km/h). Os POIs são extraídos da região do Setor Universitário de Goiânia-GO via Overpass API.
-
-## Reivindicação #2: Análise Comparativa
-
-Executa 30 rodadas independentes (com `rng(i)` para reprodutibilidade) comparando os algoritmos Greedy e ACO com três valores de η nos dois cenários. Os resultados são apresentados em gráficos de barras com intervalos de confiança de 95% (t-score = 2.045 para N-1 = 29 graus de liberdade).
-
-### Parâmetros do ACO utilizados nos experimentos:
-
-| Parâmetro | Valor |
-|-----------|-------|
-| Número de formigas | 20 |
-| Número de iterações | 50 |
-| α (feromônio) | 1 |
-| β (heurística) | 3 |
-| ρ (evaporação) | 0.1 |
-| η testados | 0, 0.5, 1 |
+## Reivindicação #2: Geração do Grafo
+Esta etapa não é obrigatória.
+Ela já foi executada anteriormente e os arquivos necessários já estão carregados na etapa principal - Recomendação de Rotas
+Para executar a etapa de pre-processamento, será necessária a conexão com internet.
+A consulta à Overpass API pode demorar alguns segundos. Em caso de erro 504 (Gateway Timeout), o script realiza até 3 tentativas automáticas, ou tentar posteriormente.
+Este script consulta a Overpass API e gera os seguintes arquivos CSV:
+- `grafo_pois_gyn.csv`  e   `grafo_pois_poke_qoe.csv` 
 
 ---
 
