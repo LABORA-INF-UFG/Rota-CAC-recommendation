@@ -157,9 +157,9 @@ Deseja executar os experimentos? (s/n):
 Para execução dos experimentos definitivos, escolha 30 execuções. 
 O arquivo main_todos invoca os seguintes módulos: avalia_eficiencia; analise_totais_absolutos e
 analise_comparativa. Ao final, são exibidos os gráficos: 
-Gráfico Análise de Eficiência,
-Grafíco com Pontuação total, QCAC total e número médio de POIs,
-Gráfico de Impacto da Penalidade.
+- Gráfico Análise de Eficiência: conforme a Figura 3 do artigo: Eficiência da QoE e Eficiência de Pontos
+- Grafíco com Pontuação total, QCAC total e número médio de POIs: conforme a Figura 4 do artigo: Resultados comparativos médio dos Algoritmos (Greedy e RotaCAC) 
+- Gráfico de Impacto da Penalidade: conforme Figura 5 do artigo: Resultados comparativos Tamanho da Rota, em cenários Sem/Com Penalidades.
 ```
 
 
