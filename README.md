@@ -124,7 +124,8 @@ cd geracao_grafo
 main.m
 ```
 Este script consulta a Overpass API e gera os seguintes arquivos CSV:
-- `grafo_pois_gyn.csv`  e   `grafo_pois_poke_qoe.csv` 
+- `grafo_pois_gyn.csv`  e   `grafo_pois_poke_qoe.csv`
+Ao final, é exibido o mapa com os POIs.
 > **Atenção:** A consulta à Overpass API pode demorar alguns segundos. Em caso de erro 504 (Gateway Timeout), o script realiza até 3 tentativas automáticas.
 
 ## Etapa 2: Recomendação de Rotas
