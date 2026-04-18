@@ -6,7 +6,7 @@ Propomos uma formulação que integra explicitamente fatores de comunicação, m
 Diferentemente de abordagens tradicionais centradas apenas na distância ou na pontuação do jogo, o modelo proposto incorpora condições dinâmicas de rede 5G
 como critério decisório no planejamento de trajetórias.
 O modelo considera a Qualidade de Experiência (QoE-CAC) do jogador, o contexto dos Pontos de Interesse (POIs) e o custo de deslocamento entre eles.
-Para resolver o problema de recomendação de rotas, foi proposto um algoritmo heurístico baseado em \ac{ACO}. 
+Para resolver o problema de recomendação de rotas, foi proposto um algoritmo heurístico baseado em  Ant Colony Optimization (ACO). 
 Experimentos com dados reais de rede demonstram que a abordagem equilibrada (RotaCAC-0.5) 
 oferece melhor compromisso entre a pontuação e a QoE percebida frente a estratégias não conscientes de QoE.
 
