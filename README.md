@@ -111,7 +111,7 @@ Gráfico de Impacto da Penalidade.
 
 # Experimentos
 
-O experimento principal encontra-se na pasta `recomendacao_rotas.
+O experimento principal encontra-se na pasta `recomendacao_rotas`.
 No entanto, o trabalho efetuou um pre-processamento para geração dos grafos e geração dos datasets utilizados na etapa de recomendação de rotas.
 Cada etapa é descrita logo a seguir.
 
