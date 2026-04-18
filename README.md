@@ -103,10 +103,10 @@ analise_comparativa;
  Em cada um destes módulos, são feitas 30 execuções 
 
 Ao final, espera-se que o script execute sem erros e gere os seguintes gráficos 
-Gráfico Análise de Eficiência, Grafíco com Pontuação total, QCAC total e número médio de POIs, Gráfico de Impacto da Penalidade.
+Gráfico Análise de Eficiência, Grafíco com Pontuação total, QCAC total e número médio de POIs, Gráfico de Impacto da Penalidade.```
 ---
 
-## Experimentos
+# Experimentos
 
 O experimento principal encontra-se na pasta `recomendacao_rotas.
 No entanto, o trabalho efetuou um pre-processamento para geração dos grafos e geração dos datasets utilizados na etapa de recomendação de rotas.
