@@ -94,12 +94,13 @@ responda ao prompt no MatLab:
 ======================================================
 Deseja executar os experimentos? (s/n):
 
-Para execução mínima, escolha pelo menos 2 execuções 
+Para execução mínima, escolha pelo menos 2 execuções. 
+Obs: em nossos experimentos, foram feitas 30 execuções.
 O arquivo main_todos invoca os seguintes módulos:
 avalia_eficiencia;
 analise_totais_absolutos;
 analise_comparativa;
- Em cada um destes módulos, são feitas 30 execuções 
+
 
 Ao final, espera-se que o script execute sem erros e gere os seguintes gráficos: 
 Gráfico Análise de Eficiência,
