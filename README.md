@@ -95,7 +95,7 @@ responda ao prompt no MatLab:
 Deseja executar os experimentos? (s/n):
 
 Para execução mínima, escolha pelo menos 2 execuções. 
-Obs: em nossos experimentos, foram feitas 30 execuções.
+Obs: em nossos experimentos foram feitas 30 execuções.
 O arquivo main_todos invoca os seguintes módulos:
 avalia_eficiencia;
 analise_totais_absolutos;
@@ -113,7 +113,7 @@ Gráfico de Impacto da Penalidade.
 
 O experimento principal é o de Recomendação de Rotas (Etapa 2).
 A Etapa 1 corresponde ao pre-processamento e já foi previamente executada para execução da Etapa 2.
-Ela contém o código de pre-processamento para geração dos grafos e geração dos datasets utilizados. 
+Ela contém o código de pre-processamento para geração dos grafos e geração dos datasets utilizados, se necessário. 
 Cada etapa é descrita logo a seguir.
 
 ## Etapa 1: Pre-processamento: Geração do Grafo de POIs
