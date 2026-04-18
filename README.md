@@ -69,8 +69,7 @@ cd Rota-CAC-recommendation
 
 # Teste Mínimo
 
-Para validar a instalação:
-entre na pasta `recomendacao_rotas_cac/` e execute o script principal no MATLAB: main_todos.m
+Para validar a instalação, após download, entre na pasta `recomendacao_rotas_cac/` e execute o script principal no MATLAB: main_todos.m
 
 ```matlab
 cd recomendacao_rotas_cac
