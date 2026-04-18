@@ -164,8 +164,8 @@ analise_comparativa. Ao final, são exibidos os gráficos:
 
 
 ## Reivindicação #1: Recomendação de Rotas
-Esta etapa já considera todos os parâmetros e arquivos .csv necessários para execução 
 Não é necessário efetuar a carga de pre-processamento para sua execução!
+Esta etapa já considera todos os parâmetros e arquivos .csv necessários para execução. 
 
 ## Reivindicação #2: Geração do Grafo
 Esta etapa não é obrigatória.
