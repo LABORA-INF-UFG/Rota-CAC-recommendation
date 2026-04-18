@@ -103,7 +103,8 @@ analise_comparativa;
  Em cada um destes módulos, são feitas 30 execuções 
 
 Ao final, espera-se que o script execute sem erros e gere os seguintes gráficos 
-Gráfico Análise de Eficiência, Grafíco com Pontuação total, QCAC total e número médio de POIs, Gráfico de Impacto da Penalidade.```
+Gráfico Análise de Eficiência, Grafíco com Pontuação total, QCAC total e número médio de POIs, Gráfico de Impacto da Penalidade.
+```
 ---
 
 # Experimentos
