@@ -66,7 +66,7 @@ A execução deste artefato é isenta de riscos para os avaliadores. Não há ne
 
 # Instalação
 
-Não é necessária instalação de dependências adicionais além do MATLAB R2022b. Basta clonar o repositório:
+Basta clonar o repositório. Verifique se as Toolboxes necessárias estão disponíveis na sua instalação do MATLAB (veja seção Dependências)
 
 ```
 git clone https://github.com/LABORA-INF-UFG/Rota-CAC-recommendation.git
