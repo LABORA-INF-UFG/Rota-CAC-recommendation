@@ -171,15 +171,22 @@ analise_comparativa. Ao final, são exibidos os gráficos:
 
 ## Reivindicação #1: Recomendação de Rotas
 Não é necessário efetuar a carga de pre-processamento para sua execução!
+
 Esta etapa já considera todos os parâmetros e arquivos .csv necessários para execução. 
+
 Verifique se Statistics and Machine Learning Toolbox está disponível na sua instalação do MATLAB 
 
 ## Reivindicação #2: Geração do Grafo
 Esta etapa não é obrigatória.
+
 Ela já foi executada anteriormente e os arquivos necessários já estão carregados na etapa principal - Recomendação de Rotas
+
 Verifique se Mapping Toolbox está disponível na sua instalação do MATLAB 
+
 Para executar a etapa de pre-processamento, será necessária a conexão com internet.
+
 A consulta à Overpass API pode demorar alguns segundos. Em caso de erro 504 (Gateway Timeout), o script realiza até 3 tentativas automáticas, ou tentar posteriormente.
+
 Este script consulta a Overpass API e gera os seguintes arquivos CSV:
 - `grafo_pois_gyn.csv`  e   `grafo_pois_poke_qoe.csv` 
 ---
