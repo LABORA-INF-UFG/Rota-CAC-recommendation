@@ -136,7 +136,7 @@ Ao final, é exibido o mapa com os POIs.
 
 ## Etapa 2: Recomendação de Rotas
 
-Entre na pasta `recomendacao_rotas/` e execute a análise comparativa:
+Entre na pasta `recomendacao_rotas/` e execute main_todos.m:
 
 ```matlab
 cd recomendacao_rotas
