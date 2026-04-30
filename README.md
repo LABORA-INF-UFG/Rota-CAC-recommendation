@@ -174,12 +174,15 @@ Não é necessário efetuar a carga de pre-processamento para sua execução!
 
 Esta etapa já considera todos os parâmetros e arquivos .csv necessários para execução. 
 
+Para execução dos experimentos definitivos, escolha pelo menos 30 execuções. 
+
 Verifique se Statistics and Machine Learning Toolbox está disponível na sua instalação do MATLAB 
+
 
 ## Reivindicação #2: Geração do Grafo
 Esta etapa não é obrigatória.
-
 Ela já foi executada anteriormente e os arquivos necessários já estão carregados na etapa principal - Recomendação de Rotas.
+
 Verifique se Mapping Toolbox está disponível na sua instalação do MATLAB 
 
 Para executar a etapa de pre-processamento, será necessária a conexão com internet.
