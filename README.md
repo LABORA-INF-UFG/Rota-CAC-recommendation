@@ -1,7 +1,7 @@
 # Recomendação de Rotas Consciente de QoE com Atenção e Comunicação
 
 Este trabalho propõe um modelo de recomendação de rotas (itinerários) para Jogos baseados em localização com Realidade Aumentada (JBLRA),
-denominado **Rota-CAC** (*Rota Consciente de Atenção e Comunicação).
+denominado **Rota-CAC** (Rota Consciente de Atenção e Comunicação).
 Propomos uma formulação que integra explicitamente fatores de comunicação, mobilidade e atenção do usuário por meio da métrica QoE-CAC.
 Diferentemente de abordagens tradicionais centradas apenas na distância ou na pontuação do jogo, o modelo proposto incorpora condições dinâmicas de rede 5G
 como critério decisório no planejamento de trajetórias.
