@@ -179,8 +179,7 @@ Verifique se Statistics and Machine Learning Toolbox está disponível na sua in
 ## Reivindicação #2: Geração do Grafo
 Esta etapa não é obrigatória.
 
-Ela já foi executada anteriormente e os arquivos necessários já estão carregados na etapa principal - Recomendação de Rotas
-
+Ela já foi executada anteriormente e os arquivos necessários já estão carregados na etapa principal - Recomendação de Rotas.
 Verifique se Mapping Toolbox está disponível na sua instalação do MATLAB 
 
 Para executar a etapa de pre-processamento, será necessária a conexão com internet.
