@@ -41,13 +41,19 @@ Com base nos códigos e datasets disponibilizados neste repositório.
 Para execução do código, necessita-se dos seguintes pre-requisitos:
 
 - **Sistema Operacional:** Windows, macOS ou Linux
-- **Software:** MATLAB R2022b ou superior
+- **Software:** MATLAB R2022b ou superior  (ou [MATLAB Online](https://matlab.mathworks.com), para usuários sem licença instalada)
 - **Hardware mínimo:** 4GB RAM, 500MB de espaço em disco
 
 
 # Dependências
 - Necessária conexão com a internet (para consulta à Overpass API na geração do grafo)
-- Nenhuma Toolbox adicional é necessária
+- As seguintes Toolboxes são necessárias:
+  - **Mapping Toolbox** — necessária para execução da geração do grafo (`Etapa 1 - pre-processamento`)
+  - **Statistics and Machine Learning Toolbox** — necessária para execução da recomendação de rotas (`Etapa 2`)
+
+> **Atenção:** A disponibilidade das Toolboxes pode variar conforme a instalação do MATLAB. 
+Caso alguma Toolbox não esteja disponível, ela pode ser instalada manualmente pelo Add-On Explorer do MATLAB.
+
 
 
 ---
