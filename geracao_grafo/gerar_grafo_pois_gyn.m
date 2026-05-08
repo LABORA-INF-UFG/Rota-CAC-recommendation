@@ -2,7 +2,7 @@
 % gera_mapa_POIs.m
 % Extrai POIs no Setor Universitário de Goiânia e gera:
 % grafo_pois_gyn.csv e custo.csv
-
+% Última atualização 08/05/26 - Distância em metros usando Haversine (sem Mapping Toolbox)
 
 clc; clear; close all;
 
@@ -100,11 +100,16 @@ Arestas = table('Size', [0 7], ...
     'VariableTypes', {'double','double','double','double','double','double','double'}, ...
     'VariableNames', {'poi_origem','poi_destino','Lat_Origem','Lon_Origem','Distancia_m','Tempo_s','Tempo_min'});
 
-wgs84 = wgs84Ellipsoid('meters');
 for i = 1:nPOI
     for j = i+1:nPOI
-        % Distância em metros
-        dist_m = deg2km(distance(POIs.Latitude(i), POIs.Longitude(i), POIs.Latitude(j), POIs.Longitude(j), wgs84 ));
+        % Distância em metros usando Haversine (sem Mapping Toolbox)
+        R = 6378137.0;
+        lat1 = deg2rad(POIs.Latitude(i));
+        lat2 = deg2rad(POIs.Latitude(j));
+        dlat = deg2rad(POIs.Latitude(j) - POIs.Latitude(i));
+        dlon = deg2rad(POIs.Longitude(j) - POIs.Longitude(i));
+        a = sin(dlat/2)^2 + cos(lat1)*cos(lat2)*sin(dlon/2)^2;
+        dist_m = 2 * R * atan2(sqrt(a), sqrt(1-a));
 
         % Tempo em segundos (velocidade -> m/s)
         tempo_s = dist_m / (velocidade_pedestre * 1000 / 3600);
@@ -117,7 +122,7 @@ for i = 1:nPOI
 
         % Adiciona linha
         Arestas = [Arestas;
-                   {POIs.poiid(i), POIs.poiid(j), POIs.Latitude(i), POIs.Longitude(i), dist_m, tempo_s, tempo_min}];
+            {POIs.poiid(i), POIs.poiid(j), POIs.Latitude(i), POIs.Longitude(i), dist_m, tempo_s, tempo_min}];
     end
 end
 
