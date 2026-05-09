@@ -267,29 +267,3 @@ Compara os algoritmos em dois cenários: sem penalidade de atraso e com penalida
 **Saída:**
 - Gráfico: *Impacto da Penalidade — Tamanho da Rota Sem/Com Penalidades* (conforme Figura 5 do artigo)
 
----
-
-### Detalhamento adicional: `analise_comparativa.m`
-
-**Cenários configuráveis:**
-
-| Variável | Valor | Descrição |
-|---|---|---|
-| `ATRASO_CENARIO_1` | 0 s | Sem penalidade de atraso |
-| `ATRASO_CENARIO_2` | 60 s | Com penalidade de atraso |
-
-**Cálculo estatístico:**
-- Utiliza t-score de 2.045 (correspondente a 29 graus de liberdade, α=0.05) para cálculo dos intervalos de confiança de 95%
-- Fórmula: `Erro = t_score × STD / sqrt(N)`
-
-**Saída — gráfico com três subplots:**
-
-| Subplot | Métrica |
-|---|---|
-| 1 | Pontuação Total Média (Cenário 1 vs Cenário 2) |
-| 2 | QoE Total Média (Cenário 1 vs Cenário 2) |
-| 3 | Tamanho da Rota Médio — nº de POIs (Cenário 1 vs Cenário 2) |
-
-- Gráfico: *Impacto da Penalidade — Tamanho da Rota Sem/Com Penalidades* (conforme Figura 5 do artigo)
-
----
