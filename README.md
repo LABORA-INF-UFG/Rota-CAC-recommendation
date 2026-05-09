@@ -47,9 +47,8 @@ Para execução do código, necessita-se dos seguintes pre-requisitos:
 ---
 # Dependências
 - Necessária conexão com a internet (para consulta à Overpass API na geração do grafo)
-- As seguintes Toolboxes são necessárias:
-  - **Mapping Toolbox** — necessária para execução da geração do grafo (`Etapa 1 - pre-processamento`)
-  - **Statistics and Machine Learning Toolbox** — necessária para execução da recomendação de rotas (`Etapa 2`)
+- A seguinte Toolbox é necessária:
+    - **Statistics and Machine Learning Toolbox** — necessária para execução da recomendação de rotas (`Etapa 2`)
 
 **Atenção:** A disponibilidade das Toolboxes pode variar conforme a instalação do MATLAB. 
 Caso alguma Toolbox não esteja disponível, ela pode ser instalada manualmente pelo Add-On Explorer do MATLAB.
@@ -74,6 +73,19 @@ cd Rota-CAC-recommendation
 ```
 
 ---
+# Executando no MATLAB Online
+
+Para usuários sem licença do MATLAB instalada, é possível executar o código pelo MATLAB Online gratuitamente:
+
+1. Acesse [https://matlab.mathworks.com](https://matlab.mathworks.com)
+2. Crie uma conta com seu e-mail institucional (ou faça login caso já possua)
+3. Clique no ícone de **grid** (⊞) no canto superior direito
+4. Escolha **MATLAB Drive** para fazer upload dos arquivos do repositório
+5. Após o upload, escolha **MATLAB Online (basic)** para abrir o ambiente de execução
+6. Navegue até a pasta dos arquivos e execute normalmente conforme as instruções abaixo
+
+---
+
 # Teste Mínimo
 
 Para validar a instalação, após download, entre na pasta `recomendacao_rotas_cac/` e execute o script principal no MATLAB: main_todos.m
@@ -183,8 +195,6 @@ Verifique se Statistics and Machine Learning Toolbox está disponível na sua in
 ## Reivindicação #2: Geração do Grafo
 Esta etapa não é obrigatória.
 Ela já foi executada anteriormente e os arquivos necessários já estão carregados na etapa principal - Recomendação de Rotas.
-
-Verifique se Mapping Toolbox está disponível na sua instalação do MATLAB 
 
 Para executar a etapa de pre-processamento, será necessária a conexão com internet.
 
