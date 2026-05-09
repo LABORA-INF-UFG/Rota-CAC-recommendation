@@ -260,8 +260,7 @@ Compara os algoritmos em dois cenários: sem penalidade de atraso e com penalida
 - Executa `num_execucoes` rodadas para dois cenários:
   - **Cenário 1:** `atraso = 0` (sem penalidade)
   - **Cenário 2:** `atraso = 60s` (com penalidade)
-- Compara o tamanho médio das rotas entre os cenários para cada algoritmo
-- Calcula intervalos de confiança de 95%
+- Compara a  pontuação total média, QoE total média e tamanho médio das rotas, considerando os algoritmos em cada um dos cenários
 - Gera gráfico comparativo entre os dois cenários
 
 **Saída:**
