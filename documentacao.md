@@ -264,5 +264,5 @@ Compara os algoritmos em dois cenários: sem penalidade de atraso e com penalida
 - Gera gráfico comparativo entre os dois cenários
 
 **Saída:**
-- Gráfico: *Impacto da Penalidade — Tamanho da Rota Sem/Com Penalidades* (conforme Figura 5 do artigo)
+- Gráfico: *Resultados comparativos Tamanho da Rota em cenários Sem/Com Penalidades* (conforme Figura 5 do artigo)
 
